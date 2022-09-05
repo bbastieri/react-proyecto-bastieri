@@ -1,0 +1,11 @@
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: slateblue
+};
+
+img{
+    height: 50px;
+    width: 50px;
+}
