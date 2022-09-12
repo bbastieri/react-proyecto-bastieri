@@ -1,0 +1,9 @@
+@font-face {
+    font-family: titaniaText;
+    src: url(../../assets/fonts/titania/Titania-Regular.ttf)};
+
+h1{
+    font-family: titaniaText;
+    text-align: center;
+}    
+

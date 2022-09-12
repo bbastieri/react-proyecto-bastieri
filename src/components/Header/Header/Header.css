@@ -1,6 +1,6 @@
 @font-face {
     font-family: titaniaText;
-    src: url(../../fonts/titania/Titania-Regular.ttf); }
+    src: url(../../../assets/fonts/titania/Titania-Regular.ttf)}
 
 header{
     display: flex;
