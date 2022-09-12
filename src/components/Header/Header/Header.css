@@ -1,0 +1,16 @@
+@font-face {
+    font-family: titaniaText;
+    src: url(../../fonts/titania/Titania-Regular.ttf); }
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: slateblue;
+    font-family: titaniaText;
+};
+
+img{
+    height: 100px;
+    width: 100px;
+}

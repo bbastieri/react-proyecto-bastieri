@@ -1,6 +1,6 @@
-import NavBar from "./NavBar";
-import logo1 from "../../images/logo1.png";
-import CartWidget from "./CartWidget";
+import NavBar from "../NavBar/NavBar";
+import logo1 from "";
+import CartWidget from "../CartWidget/CartWidget";
 import "./Header.css"
 
 const Header = () =>{
