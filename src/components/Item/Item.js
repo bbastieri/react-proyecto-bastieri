@@ -1,6 +1,12 @@
-const Item = () => {
+import { Profiler } from "react";
+import {productos} from "../../assets/productos"
+
+const Item = ({productos}) => {
     return(
-        <div>Item</div>
+        <>
+        <h4>{productos.name}</h4>
+        <h4>{"$"+productos.price}</h4>
+        </>
     )
 };
 

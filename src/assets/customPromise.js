@@ -1,4 +1,4 @@
-const customPromise = (productos) => {
+export const customPromise = (productos) => {
     return (
         new Promise ((resolve, reject) => {
             setTimeout (()=> {
@@ -8,4 +8,3 @@ const customPromise = (productos) => {
     ));
 };
 
-export default customPromise

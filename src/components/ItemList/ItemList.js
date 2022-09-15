@@ -1,9 +1,13 @@
+import Item from "../Item/Item"
 
-
-const ItemList = () => {
+const ItemList = ({listaProductos}) => {
+    console.log (listaProductos)
     return(
-        <div>ItemList</div>
+        <>
+            {listaProductos.map((pr, i) => <Item key={`${pr.productos}-${i}`} productos ={pr}/>)}
+        </>
     );
 }
 
 export default ItemList;
+

@@ -1,7 +1,6 @@
 export const productos = [
     {
         id:1, 
-        image: "",
         name: "Body Dominatrix",
         category: "Bodys",
         description: "Body latex negro con escote enlazado",
@@ -10,7 +9,6 @@ export const productos = [
     },
     {
         id:2,
-        image:"",
         name: "Bombi Heavy Metal",
         category: "Bombis",
         description: "Bombacha de red tiro alto",
@@ -19,7 +17,6 @@ export const productos = [
     },
     {
         id:3,
-        image: "",
         name: "Corpiño Heavy Metal",
         category: "Corpiños",
         description: "Corpiño tipo top de lycra engomada combinado con red color negro",
@@ -28,7 +25,6 @@ export const productos = [
     },
     {
         id:4,
-        image:"",
         name: "Medias Ying Yang Black",
         category: "Medias",
         description: "Medias de algodón negras",
