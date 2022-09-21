@@ -4,10 +4,10 @@ const NavBar = () =>{
     return (
         <>
             <nav>
-                <a href=''>Tops</a>
-                <a href=''>Bombis</a>
-                <a href=''>Corpiños</a>
-                <a href=''>Medias</a>
+                <a>Tops</a>
+                <a>Bombis</a>
+                <a>Corpiños</a>
+                <a>Medias</a>
             </nav>
         </>
     );

@@ -17,7 +17,8 @@ const ItemCount = ({ inicio, stock, onAdd }) =>{
         <>
             <div className="itemListContainer">        
             <button onClick={restar}>-</button>
-            <h3>{contador}</h3>
+            <h3
+            >{contador}</h3>
             <button onClick={sumar}>+</button>
             <button onClick={agregar}>Agregar al carrito</button>
             <ToastContainer 
