@@ -1,3 +1,5 @@
+import "./Item.css"
+
 const Item = ({productos}) => {
     return(
         <>

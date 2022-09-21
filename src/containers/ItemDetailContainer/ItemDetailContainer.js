@@ -15,7 +15,7 @@ const ItemDetailContainer = () => {
     useEffect (() =>{
         customPromise (productos)
             .then (respuesta => {
-                setListaProductos(respuesta)
+                setListaProductos(respuesta[1])
                 setCargando (false)
             })
 
@@ -29,7 +29,7 @@ const ItemDetailContainer = () => {
         {cargando ?     
              <CircularProgress color="secondary" />
         :
-            <ItemDetail listaProductos = {listaProductos}/>
+            <ItemDetail item = {listaProductos}/>
         }   
         </>
     )

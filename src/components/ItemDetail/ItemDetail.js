@@ -1,10 +1,12 @@
-const ItemDetail = ({productos}) => {
+import "./ItemDetail.css"
+
+const ItemDetail = ({item}) => {
     return(
         <>
-        <h4>{productos.name}</h4>
-        <img src={productos.image} height="150px" />
-        <p>{productos.description}</p>
-        <h4>{"$"+productos.price}</h4>
+        <h4>{item.name}</h4>
+        <img src={item.image} height="150px" />
+        <p>{item.description}</p>
+        <h4>{"$"+item.price}</h4>
         </>
     )
 };
