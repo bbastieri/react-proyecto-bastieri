@@ -4,22 +4,25 @@ import { productos } from "../../assets/productos";
 import { customPromise } from "../../assets/customPromise"
 import { useState } from "react";
 import { useEffect } from "react";
-import "./ItemListContainer.css";
 import CircularProgress from '@mui/material/CircularProgress';
+import "./ItemListContainer.css";
+import { useParams } from "react-router-dom";
 
 const ItemListContainer = ({greeting}) => {
+
+    let { IdCategoria } = useParams();
+    console.log (IdCategoria);
 
     const [listaProductos, setListaProductos] = useState([]);
     const [cargando, setCargando]  = useState([true])
 
     useEffect (() =>{
-        customPromise (productos)
-            .then (respuesta => {
-                setListaProductos(respuesta)
-                setCargando (false)
+        customPromise (productos).then (respuesta => {setListaProductos(respuesta)
+            setCargando (false)
             })
-
-    }, []);
+    }, [])
+        customPromise (productos, IdCategoria, 'category').then(respuesta =>{setListaProductos(respuesta)
+    }, [IdCategoria])
 
     console.log (listaProductos)
 

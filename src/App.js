@@ -3,6 +3,7 @@ import './App.css';
 import Header from "./components/Header/Header/Header";
 import ItemListContainer from './containers/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './containers/ItemDetailContainer/ItemDetailContainer';
+import Cart from './containers/CartView/Cart';
 import { BrowserRouter,Routes,Route } from "react-router-dom";
 
 const App = () => {
@@ -13,11 +14,10 @@ const App = () => {
     <BrowserRouter>
     <Header />
     <Routes>
-      <Route path="/"/>
-      <Route path="/categoria/tops"/>
-      <Route path="/categoria/bombis"/>
-      <Route path="/categoria/corpis"/>
-      <Route path="/categoria/medias"/>
+      <Route path='/' element={<ItemListContainer greeting ={message}/>}/>
+      <Route path='/categoria/:IdCategoria' element={<ItemListContainer greeting ={message}/>}/>
+      <Route path='producto/:IdProducto' element={<ItemDetailContainer />}/>
+      <Route path='/cart' element={<Cart/>}/>
     </Routes>
     </BrowserRouter>
     </>
@@ -26,6 +26,4 @@ const App = () => {
 
 export default App;
 
-/* <Header />
-<ItemListContainer greeting ={message}/>
-<ItemDetailContainer /> */
+

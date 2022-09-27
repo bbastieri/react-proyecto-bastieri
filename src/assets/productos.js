@@ -21,7 +21,7 @@ export const productos = [
         id:3,
         name: "Corpiño Heavy Metal",
         image: "/images/corpiños/corpi_heavymetal.JPG",
-        category: "Corpiños",
+        category: "Corpis",
         description: "Corpiño tipo top de lycra engomada combinado con red color negro",
         price: 3000,
         stock: 8
