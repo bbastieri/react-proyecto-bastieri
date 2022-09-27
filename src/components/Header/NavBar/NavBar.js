@@ -1,8 +1,7 @@
 import "./NavBar.css"
-import { productos } from "../../../assets/productos"
-import { Link, NavLink } from "react-router-dom";
+import {Link} from "react-router-dom";
 
-const NavBar = ({productos}) =>{
+const NavBar = () =>{
     return (
         <>
             <nav>

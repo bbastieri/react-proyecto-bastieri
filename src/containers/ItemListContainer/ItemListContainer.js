@@ -1,5 +1,4 @@
 import ItemList from "../../components/ItemList/ItemList";
-import ItemCount from "../../components/ItemCount/ItemCount";
 import { productos } from "../../assets/productos";
 import { customPromise } from "../../assets/customPromise"
 import { useState } from "react";
@@ -19,9 +18,13 @@ const ItemListContainer = ({greeting}) => {
     useEffect (() =>{
         customPromise (productos).then (respuesta => {setListaProductos(respuesta)
             setCargando (false)
+            if (IdCategoria) {
+                const productosFiltrados = productos.filter(productos => productos.category === IdCategoria)
+                setListaProductos(productosFiltrados)
+            } else {
+                setListaProductos(productos)
+            }
             })
-    }, [])
-        customPromise (productos, IdCategoria, 'category').then(respuesta =>{setListaProductos(respuesta)
     }, [IdCategoria])
 
     console.log (listaProductos)
@@ -34,7 +37,6 @@ const ItemListContainer = ({greeting}) => {
         :
             <ItemList listaProductos = {listaProductos}/>
         }   
-        <ItemCount inicio={1} stock={15} onAdd={() => {}} />
         </>
         );
 };

@@ -1,6 +1,6 @@
 export const productos = [
     {
-        id:1, 
+        id:0, 
         name: "Body Dominatrix",
         image: "/images/bodys/body_dominatrix.png",
         category: "Bodys",
@@ -9,7 +9,7 @@ export const productos = [
         stock: 5   
     },
     {
-        id:2,
+        id:1,
         name: "Bombi Heavy Metal",
         image: "/images/bombis/bombi_heavymetal.JPG",
         category: "Bombis",
@@ -18,7 +18,7 @@ export const productos = [
         stock: 10
     },
     {
-        id:3,
+        id:2,
         name: "Corpiño Heavy Metal",
         image: "/images/corpiños/corpi_heavymetal.JPG",
         category: "Corpis",
@@ -27,7 +27,7 @@ export const productos = [
         stock: 8
     },
     {
-        id:4,
+        id:3,
         name: "Medias Ying Yang Black",
         image: "/images/medias/media_yinyang_black.jpg",
         category: "Medias",
