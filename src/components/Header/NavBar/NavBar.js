@@ -1,13 +1,15 @@
 import "./NavBar.css"
+import { productos } from "../../../assets/productos"
+import { Link, NavLink } from "react-router-dom";
 
-const NavBar = () =>{
+const NavBar = ({categorias}) =>{
     return (
         <>
             <nav>
-                <a>Tops</a>
-                <a>Bombis</a>
-                <a>Corpiños</a>
-                <a>Medias</a>
+                <Link to="/categoria/tops">Tops</Link>
+                <Link to="/categoria/bombis">Bombis</Link>
+                <Link to="/categoria/corpis">Corpiños</Link>
+                <Link to="/categoria/medias">Medias</Link>
             </nav>
         </>
     );
