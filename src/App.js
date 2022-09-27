@@ -11,12 +11,21 @@ const App = () => {
   return (
     <>
     <BrowserRouter>
-      <Header />
-      <ItemListContainer greeting ={message}/>
-      <ItemDetailContainer />
+    <Header />
+    <Routes>
+      <Route path="/"/>
+      <Route path="/categoria/tops"/>
+      <Route path="/categoria/bombis"/>
+      <Route path="/categoria/corpis"/>
+      <Route path="/categoria/medias"/>
+    </Routes>
     </BrowserRouter>
     </>
     );
 };
 
 export default App;
+
+/* <Header />
+<ItemListContainer greeting ={message}/>
+<ItemDetailContainer /> */
