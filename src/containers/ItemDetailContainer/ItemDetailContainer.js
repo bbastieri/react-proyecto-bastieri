@@ -7,6 +7,7 @@ import "./ItemDetailContainer.css"
 import CircularProgress from '@mui/material/CircularProgress';
 import { useParams } from "react-router-dom";
 
+
 const ItemDetailContainer = () => {
     const [listaProductos, setListaProductos] = useState([]);
     const [cargando, setCargando]  = useState([true]);

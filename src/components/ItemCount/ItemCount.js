@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./ItemCount.css";
 import { Button } from "@mui/material";
+import { Context } from "../../context/CartContext"
 
 const ItemCount = ({ inicio, stock, onAdd }) =>{
 
