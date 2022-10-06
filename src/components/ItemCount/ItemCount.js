@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./ItemCount.css";
 import { Button } from "@mui/material";
-import { Context } from "../../context/CartContext"
+
 
 const ItemCount = ({ inicio, stock, onAdd }) =>{
 
@@ -18,7 +18,7 @@ const ItemCount = ({ inicio, stock, onAdd }) =>{
             <h3
             >{contador}</h3>
             <button onClick={sumar}>+</button>
-            <Button onClick={onAdd}>Agregar al carrito</Button>
+            <Button onClick={() => onAdd (contador)}>Agregar al carrito</Button>
             </div>
         </>
     )
