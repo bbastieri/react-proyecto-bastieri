@@ -1,33 +1,38 @@
 import ItemList from "../../components/ItemList/ItemList";
-import { productos } from "../../assets/productos";
-import { customPromise } from "../../assets/customPromise"
 import { useState } from "react";
 import { useEffect } from "react";
 import CircularProgress from '@mui/material/CircularProgress';
 import "./ItemListContainer.css";
 import { useParams } from "react-router-dom";
+import { db } from "../../firebase/firebase"
+import { getDocs, collection, query, where } from "firebase/firestore"
 
 const ItemListContainer = ({greeting}) => {
 
-    let { IdCategoria } = useParams();
-    console.log (IdCategoria);
-
+    const { IdCategoria } = useParams();
     const [listaProductos, setListaProductos] = useState([]);
     const [cargando, setCargando]  = useState([true])
 
     useEffect (() =>{
-        customPromise (productos).then (respuesta => {setListaProductos(respuesta)
-            setCargando (false)
-            if (IdCategoria) {
-                const productosFiltrados = productos.filter(productos => productos.category === IdCategoria)
-                setListaProductos(productosFiltrados)
-            } else {
-                setListaProductos(productos)
-            }
-            })
-    }, [IdCategoria])
 
-    console.log (listaProductos)
+        const productsColl = collection (db, 'products');
+        const productsCat = query (productsColl, where('category','==',`${IdCategoria}`))
+        let prodFiltrados = (IdCategoria === undefined ? productsColl : productsCat)
+        getDocs (prodFiltrados)
+        .then ((data) => {
+        const productList = data.docs.map((products)=>{
+            return{
+                ...products.data(),
+                id: products.id
+            } 
+                
+        })    
+        setListaProductos(productList)
+        })    
+        .finally(()=>{
+            setCargando(false);
+        })
+    }, [IdCategoria])
 
     return(
         <>
