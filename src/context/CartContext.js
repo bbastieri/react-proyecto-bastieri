@@ -32,7 +32,6 @@ export function CartContextProvider ({children}) {
     const clearCart = () => setCarrito ([])
 
     const totalPrice = () => {
-        console.log (totalPrice)
         return carrito.reduce ((acumulador, producto) => acumulador += (producto.price * producto.quantity),0)
     }
 

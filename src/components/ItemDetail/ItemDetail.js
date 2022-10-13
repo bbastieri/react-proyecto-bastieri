@@ -25,8 +25,13 @@ const ItemDetail = ({ item }) => {
         <h4>{"$"+item.price}</h4>
         {
             irAlCarrito
-            ? <Link to='/cart'><button>Finalizar Compra</button></Link>
-            :<ItemCount inicio={1} stock={item.stock} onAdd={onAdd} />
+            ? 
+                <>            
+                <Link to='/cart'><button>Ir al Carrito</button></Link>
+                <Link to="/"><button>Seguir Comprando</button></Link>  
+                </>
+            :
+            <ItemCount inicio={1} stock={item.stock} onAdd={onAdd} />
  
         }
         </>
