@@ -1,13 +1,15 @@
 import { Fragment } from "react";
-import { useState, useContext } from "react";
+import { useState } from "react";
 import { collection, addDoc, serverTimestamp, updateDoc, doc } from "firebase/firestore"
 import { Link } from "react-router-dom"
-import { CartContextProvider } from "../../context/CartContext";
+import { useCartContext } from "../../context/CartContext";
 import { db } from "../../firebase/firebase"
+import { Typography, Button } from "@mui/material";
+
 
 const Form = () =>{
 
-    const { carrito, totalPrice} = useContext(CartContextProvider);
+    const { carrito, totalPrice } = useCartContext();
     
     const [ userData, setUserData ] = useState({
         Nombre: "",
@@ -45,24 +47,24 @@ const Form = () =>{
 return (
 <div>
     <Fragment>
-        <h1>Form</h1>
+        <Typography>Antes de terminar, por favor ingresá tus datos</Typography>
         <form >
            <div className="container-form">
            <div>
-            <input type="text" placeholder="Nombre" className="form" name="Name" onChange={inputChange}></input>
+            <input type="text" placeholder="Nombre"  name="Nombre" onChange={inputChange}></input>
            </div>
            <div>
-            <input type="text" placeholder="Apellido" className="form" name="Surname" onChange={inputChange}></input>
+            <input type="text" placeholder="Apellido"  name="Apellido" onChange={inputChange}></input>
            </div>
            <div>
-            <input type="Text" placeholder="Email" className="form" name="Name-Card" onChange={inputChange}></input>
+            <input type="Text" placeholder="Email"  name="Email" onChange={inputChange}></input>
            </div>
            </div>
         </form>
-        <div className="container-button">
-           <button type="Submit" className="button" onClick={finalizarCompra}>Submit</button>
-           <Link className="Link-Home"to="/">Cancel</Link>
-           </div>
+        <div>
+           <Button type="Submit" onClick={finalizarCompra}>Aceptar</Button>
+           <Link className="Link-Home"to="/"><Button>Cancelar</Button></Link>
+        </div>
     </Fragment>
           
 </div>
