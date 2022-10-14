@@ -9,13 +9,9 @@ import { Typography, Button } from "@mui/material";
 
 const Form = () =>{
 
-    const { carrito, totalPrice } = useCartContext();
-    
-    const [ userData, setUserData ] = useState({
-        Nombre: "",
-        Apellido: "",
-        Email: "",
-    })
+    const { carrito, totalPrice, clearCart } = useCartContext();
+    const [ userData, setUserData ] = useState({});
+    const [salesId, setSalesId] = useState ();
 
     const inputChange = (event) => {
         setUserData({
@@ -31,10 +27,14 @@ const Form = () =>{
             date: serverTimestamp(), 
             total: totalPrice() 
         })
-        .then(()=>{
+        .then((result)=>{
+            setSalesId(result.id);
             carrito.forEach(products => {
-                updateStock(products)
-            })
+                updateStock(products);
+            });
+            setTimeout(()=>{
+                clearCart();    
+            },1000)
         })
     }
 
@@ -62,11 +62,13 @@ return (
            </div>
         </form>
         <div>
-           <Button type="Submit" onClick={finalizarCompra}>Aceptar</Button>
+           <Button type="Submit" onClick={finalizarCompra}>Enviar</Button>
            <Link className="Link-Home"to="/"><Button>Cancelar</Button></Link>
         </div>
     </Fragment>
-          
+    <Fragment>
+        <p>El código de verificación de tu compra es: {salesId}</p>
+    </Fragment>  
 </div>
 )   
 
