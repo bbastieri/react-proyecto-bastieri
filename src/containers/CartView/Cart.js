@@ -12,7 +12,7 @@ const Cart = () => {
         <div>
             {carrito.map( producto =>
                 <Card key={producto.id}>
-                    <CardMedia component="img" alt={producto.title} image={producto.image} sx={{width: 100}}></CardMedia>
+                    <CardMedia component="img" alt={producto.description} image={producto.image} sx={{width: 100}}></CardMedia>
                     <Typography>{producto.name}</Typography>
                     <Typography>Cantidad: {producto.quantity}</Typography>
                     <Typography>Precio: $ {(producto.price * producto.quantity)}</Typography>
