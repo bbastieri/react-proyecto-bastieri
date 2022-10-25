@@ -36,11 +36,14 @@ const ItemListContainer = ({greeting}) => {
 
     return(
         <>
-        <h1>{greeting}</h1>
+        <h1 class="greeting">{greeting}</h1>
+
         {cargando ?     
              <CircularProgress color="secondary" />
         :
+            <div class="ItemContainer">
             <ItemList listaProductos = {listaProductos}/>
+            </div>
         }   
         </>
         );

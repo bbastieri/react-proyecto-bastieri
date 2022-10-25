@@ -1,7 +1,24 @@
-.itemListContainer {
-    display: inline-block;
+.ItemCountContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 5px;
+    padding-bottom: 20px;
+}
+
+.ItemCountContainer>*{
+    padding: 10px;
+}
+
+.ItemCount {
+    display: flex;
+}
+
+.ItemCount>*{
+    margin: 15px;
 }
 
 button{
-    padding: 5px;
+    margin: 5px;
 }

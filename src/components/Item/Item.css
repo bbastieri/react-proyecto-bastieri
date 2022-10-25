@@ -1,0 +1,25 @@
+@font-face {
+    font-family: titaniaText;
+    src: url(../../assets/fonts/titania/Titania-Regular.ttf)}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h4,button{
+    font-family: titaniaText;
+}
+
+button{
+    border: none;
+    background-color: rgba(205, 168, 248, 0.897);
+    padding: 5px;
+}
+
+h4,h3{
+    background-color: rgba(127, 255, 212, 0.322);
+    padding: 5px
+}

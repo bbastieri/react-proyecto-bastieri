@@ -7,10 +7,11 @@ import Cart from './containers/CartView/Cart';
 import Form from './components/Form/Form'
 import { BrowserRouter,Routes,Route } from "react-router-dom";
 import {CartContextProvider} from './context/CartContext';
+import './containers/ItemListContainer/ItemListContainer.css'
 
 
 const App = () => {
-  const message = "Bienvenidx a mi e-commerce";
+  const message = "Bienvenidx a nuestro e-commerce!";
    
   return (
     <>

@@ -1,10 +1,9 @@
-import { Fragment } from "react";
 import { useState } from "react";
 import { collection, addDoc, serverTimestamp, updateDoc, doc } from "firebase/firestore"
 import { Link } from "react-router-dom"
 import { useCartContext } from "../../context/CartContext";
 import { db } from "../../firebase/firebase"
-import { Typography, Button } from "@mui/material";
+import './Form.css'
 
 
 const Form = () =>{
@@ -46,29 +45,28 @@ const Form = () =>{
 
 return (
 <div>
-    <Fragment>
-        <Typography>Antes de terminar, por favor ingresá tus datos</Typography>
-        <form >
+    <div class="ContainerForm">
+        <h3>Antes de terminar, por favor ingresá tus datos</h3>
+        <form onSubmit={finalizarCompra} >
            <div className="container-form">
+           <div> 
+            <input type="text" placeholder="Nombre"  name="Nombre" onChange={inputChange} required={true}></input>
+           </div> 
            <div>
-            <input type="text" placeholder="Nombre"  name="Nombre" onChange={inputChange}></input>
+            <input type="text" placeholder="Apellido"  name="Apellido" onChange={inputChange} required={true}></input>
            </div>
            <div>
-            <input type="text" placeholder="Apellido"  name="Apellido" onChange={inputChange}></input>
-           </div>
-           <div>
-            <input type="Text" placeholder="Email"  name="Email" onChange={inputChange}></input>
+            <input type="text" placeholder="Email"  name="Email" onChange={inputChange} required={true}></input>
            </div>
            </div>
         </form>
         <div>
-           <Button type="Submit" onClick={finalizarCompra}>Enviar</Button>
-           <Link className="Link-Home"to="/"><Button>Cancelar</Button></Link>
+           <button type="Submit">Enviar</button>
+           <Link className="Link-Home"to="/"><button>Cancelar</button></Link>
         </div>
-    </Fragment>
-    <Fragment>
-        <p>El código de verificación de tu compra es: {salesId}</p>
-    </Fragment>  
+        <p>El código de verificación de tu compra es:</p>
+        <h3 class="salesId"> {salesId} </h3>
+    </div>
 </div>
 )   
 

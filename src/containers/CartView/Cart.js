@@ -1,6 +1,6 @@
 import { useCartContext } from "../../context/CartContext";
-import { Card, CardMedia, Typography, Button } from "@mui/material";
 import { Link } from "react-router-dom";
+import './Cart.css'
 
 
 const Cart = () => {
@@ -9,26 +9,35 @@ const Cart = () => {
 
 
     return (
-        <div>
+        <div class="CartViewContainer">
             {carrito.map( producto =>
-                <Card key={producto.id}>
-                    <CardMedia component="img" alt={producto.description} image={producto.image} sx={{width: 100}}></CardMedia>
-                    <Typography>{producto.name}</Typography>
-                    <Typography>Cantidad: {producto.quantity}</Typography>
-                    <Typography>Precio: $ {(producto.price * producto.quantity)}</Typography>
-                    <Button onClick={()=> {removeItem(producto.id)}}>Eliminar</Button>
-                </Card>
+                <div key={producto.id} class="CartView">
+                <h3>{producto.name}</h3>    
+                <div class="CartViewDetails">    
+                    <div>
+                        <img alt={producto.description} src={producto.image} sx={{width: 100}}></img>
+                    </div>
+                    <div>
+                        <h5>Cantidad: {producto.quantity}</h5>
+                        <h5>Precio: $ {(producto.price * producto.quantity)}</h5>
+                    </div>
+                </div>    
+                    <button onClick={()=> {removeItem(producto.id)}}>Eliminar</button>
+                </div>
             )}
             {carrito.length === 0 ?
-                <>
-                <Typography>Tu carrito está vacío :/</Typography>
-                <Typography>Para volver al inicio hacé click <Link to="/">acá</Link></Typography>
-                </>
+                <div class="CarritoVacio">
+                <div>    
+                    <h3>OOPS! Tu carrito está vacío!</h3>
+                    <h3>Para volver al inicio hacé click <Link to="/" class="link">acá</Link></h3>
+                </div>
+                </div>
                 :
                 <>
-                <Typography>Total: ${totalPrice()}</Typography>
-                <Button onClick={clearCart}>Vaciar carrito</Button>  
-                <Link to='/checkout'><Button>Finalizar Compra</Button></Link>
+                <p>__________________________________</p>
+                <h4>Total: ${totalPrice()}</h4>
+                <button onClick={clearCart}>Vaciar carrito</button>  
+                <Link to='/checkout'><button>Finalizar Compra</button></Link>
                 </>
             }
         </div>

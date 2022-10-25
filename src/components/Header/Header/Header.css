@@ -6,11 +6,23 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: slateblue;
+    background-color: rgb(223, 181, 195);
+    font-family: titaniaText;    
+}
+
+.title{
+    text-decoration: none;
+}
+
+h1{
+    color: black;
     font-family: titaniaText;
-};
+    text-align: center;
+    text-decoration: underline;
+    text-decoration-color: rgb(146, 179, 240);
+}
 
 img{
-    height: 100px;
     width: 100px;
+    height: 100px;
 }

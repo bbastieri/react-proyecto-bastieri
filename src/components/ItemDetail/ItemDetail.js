@@ -18,23 +18,23 @@ const ItemDetail = ({ item }) => {
     };
 
     return(
-        <>
+        <div class="DetailCard">
         <h4>{item.name}</h4>
         <img src={item.image} height="150px" alt={item.description} />
         <p>{item.description}</p>
-        <h4>{"$"+item.price}</h4>
+        <h3>{"$"+item.price}</h3>
         {
             irAlCarrito
             ? 
-                <>            
+                <div class="PurchaseOptions">            
                 <Link to='/cart'><button>Ir al Carrito</button></Link>
                 <Link to="/"><button>Seguir Comprando</button></Link>  
-                </>
+                </div>
             :
             <ItemCount inicio={1} stock={item.stock} onAdd={onAdd} />
  
         }
-        </>
+        </div>
     )
 };
 

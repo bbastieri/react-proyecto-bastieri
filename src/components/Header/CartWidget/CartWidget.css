@@ -2,6 +2,12 @@
     font-family: titaniaText;
     src: url(../../../assets/fonts/titania/Titania-Regular.ttf)}
 
-h1{
-    font-family: titaniaText;
-}    
+.widget {
+    display: flex;
+    background-color: rgb(161, 184, 226);
+}
+
+.widget>*{
+    padding: 10px;
+}
+

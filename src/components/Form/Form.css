@@ -1,0 +1,14 @@
+.ContainerForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.ContainerForm>*,input{
+    margin: 15px;
+}
+
+.salesId{
+    color: violet;
+}

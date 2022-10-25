@@ -12,7 +12,7 @@ const Header = () =>{
         <img className="logo" src={logo1} alt="logo marca"/>
         </Link>   
         <Link to="/">
-        <h1>CALYPSO LENCERIA MAGIKA</h1>
+        <h1 class="title">CALYPSO LENCERIA MAGIKA</h1>
         </Link> 
         <NavBar />
         <Link to="/cart">
