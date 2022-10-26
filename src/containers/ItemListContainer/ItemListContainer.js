@@ -39,7 +39,16 @@ const ItemListContainer = ({greeting}) => {
         <h1 class="greeting">{greeting}</h1>
 
         {cargando ?     
-             <CircularProgress color="secondary" />
+            <div style={{
+                width:"100%",
+                height: "60vh",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center"
+            }}>
+                <CircularProgress color="secondary" />
+            </div>
+             
         :
             <div class="ItemContainer">
             <ItemList listaProductos = {listaProductos}/>

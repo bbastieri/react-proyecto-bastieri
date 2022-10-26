@@ -61,7 +61,7 @@ return (
            </div>
         </form>
         <div>
-           <button type="Submit">Enviar</button>
+           <button type="Submit" onClick={finalizarCompra}>Enviar</button>
            <Link className="Link-Home"to="/"><button>Cancelar</button></Link>
         </div>
         <p>El código de verificación de tu compra es:</p>

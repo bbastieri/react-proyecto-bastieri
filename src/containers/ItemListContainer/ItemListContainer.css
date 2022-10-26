@@ -3,10 +3,9 @@
     flex-wrap: wrap;
     padding-left: 50px;
     padding-right: 50px;
-
+    
 }
 
 .ItemContainer>*{
-
     flex: 1 0 25%; 
 }

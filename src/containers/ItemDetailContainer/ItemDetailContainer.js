@@ -32,8 +32,17 @@ const ItemDetailContainer = () => {
 
     return(
         <>
-        {cargando ?     
-             <CircularProgress color="secondary" />
+        {cargando ?   
+            <div style={{
+                width:"100%",
+                height: "60vh",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center"
+            }}>
+                <CircularProgress color="secondary" />
+            </div>        
+        
         :
             <ItemDetail item = {listaProductos}/>
         }   

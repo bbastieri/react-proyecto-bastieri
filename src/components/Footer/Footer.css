@@ -3,6 +3,7 @@ footer{
     justify-content: center;
     align-items: center;
     background-color: rgb(228, 161, 184);
+    margin-top: auto;
 }
 
 footer>*{
