@@ -51,7 +51,7 @@ const Form = () =>{
                 clearCart();    
             },1000)
         } else {
-            toast('Oops! Por favor verificá tus datos para continuar', {
+            toast('Oh no! Por favor verificá tus datos para continuar', {
                     position: "bottom-right",
                     autoClose: 5000,
                     hideProgressBar: false,
@@ -78,16 +78,16 @@ return (
         <form>
            <div className="container-form">
            <div> 
-            <input type="text" placeholder="Nombre"  name="Nombre" onChange={inputChange}></input>
+            <input type="text" placeholder="Nombre"  name="Nombre" onChange={inputChange} required></input>
            </div> 
            <div>
-            <input type="text" placeholder="Apellido"  name="Apellido" onChange={inputChange}></input>
+            <input type="text" placeholder="Apellido"  name="Apellido" onChange={inputChange} required></input>
            </div>
            <div>
-            <input type="text" placeholder="Email"  name="Email" onChange={inputChange}></input>
+            <input type="text" placeholder="Email"  name="Email" onChange={inputChange} required></input>
            </div>
            <div>
-            <input type="text" placeholder="Verificá tu email"  name="VerifyEmail" onChange={inputChange}></input>
+            <input type="text" placeholder="Verificá tu email"  name="VerifyEmail" onChange={inputChange} required></input>
            </div>
            </div>
         </form>
