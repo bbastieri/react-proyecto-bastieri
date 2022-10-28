@@ -12,3 +12,9 @@
 .salesId{
     color: violet;
 }
+
+input {
+    height: 25px;
+    border-width: 1px;
+    border-color: blueviolet;
+}
